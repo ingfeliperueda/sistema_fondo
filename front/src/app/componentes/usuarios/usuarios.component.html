@@ -1,0 +1,32 @@
+<div class="container mt-5">
+  <table class="table table-success table-striped">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Fondos</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuario of usuarios;">
+        <td>{{ usuario.id }}</td>
+        <td>{{ usuario.nombre }}</td>
+        <td>
+          <!-- <div *ngIf="usuario.fondo != null"> -->
+          <div *ngIf="usuario.nombre != null">
+            <select class="form-select" aria-label="Default select example">
+            <option selected>Seleccionar fondo</option>
+            <option *ngFor="let f of fondos" [value]="f.id">{{ f.nombre }}</option>
+          </select>
+          </div>
+          <div> </div>
+        </td>
+        <!-- <td>
+                    <button class="btn btn-sm btn-info" routerLink="/tareas/{{tarea.id}}/edit">Suscribirse</button>
+                    &nbsp;
+                    <button class="btn btn-sm btn-danger" (click)="eliminarTarea(tarea.id)">Cancelar</button>
+        </td> -->
+      </tr>
+    </tbody>
+  </table>
+</div>
